@@ -3,7 +3,7 @@ package ru.seloid.pdf.merger.windows;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import ru.seloid.pdf.merger.constant.Direction;
-import ru.seloid.pdf.merger.sevice.Merger;
+import ru.seloid.pdf.merger.service.Merger;
 
 import javax.swing.JButton;
 import javax.swing.JFileChooser;

@@ -2,7 +2,7 @@ package ru.seloid.pdf.merger;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import ru.seloid.pdf.merger.sevice.Merger;
+import ru.seloid.pdf.merger.service.Merger;
 
 public class ConsoleApp {
     private static final Logger LOGGER = LoggerFactory.getLogger(ConsoleApp.class);

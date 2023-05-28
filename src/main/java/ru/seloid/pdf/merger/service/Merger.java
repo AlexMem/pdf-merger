@@ -1,4 +1,4 @@
-package ru.seloid.pdf.merger.sevice;
+package ru.seloid.pdf.merger.service;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.pdfbox.io.MemoryUsageSetting;
