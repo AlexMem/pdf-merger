@@ -4,8 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import ru.seloid.pdf.merger.windows.MainWindow;
 
-import javax.swing.SwingUtilities;
-import javax.swing.UIManager;
+import javax.swing.*;
 
 public class DesktopApp {
     private static final Logger LOGGER = LoggerFactory.getLogger(DesktopApp.class);

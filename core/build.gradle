@@ -1,0 +1,6 @@
+version '1.0.0'
+
+dependencies {
+    implementation "org.apache.pdfbox:pdfbox:$pdfboxVersion"
+    implementation "org.apache.commons:commons-lang3:$apacheCommonsVersion"
+}

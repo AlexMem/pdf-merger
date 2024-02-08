@@ -1,31 +1,16 @@
-plugins {
-    id 'java'
-}
-
-group 'ru.seloid'
 version '1.0.0'
 
-repositories {
-    mavenCentral()
+allprojects {
+    group 'ru.seloid'
 }
 
-dependencies {
-    implementation 'org.apache.pdfbox:pdfbox:2.0.28'
-    implementation 'org.apache.commons:commons-lang3:3.12.0'
-    implementation 'org.slf4j:slf4j-api:1.7.36'
-    implementation 'ch.qos.logback:logback-classic:1.2.12'
-}
-
-test {
-    useJUnitPlatform()
-}
-
-jar {
-    manifest {
-        attributes "Main-Class": "ru.seloid.pdf.merger.DesktopApp"
+subprojects {
+    apply plugin: 'java'
+    repositories {
+        mavenCentral()
     }
-
-    from {
-        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    dependencies {
+        implementation "org.slf4j:slf4j-api:$slf4gApiVersion"
+        implementation "ch.qos.logback:logback-classic:$logbackClassicVersion"
     }
 }
