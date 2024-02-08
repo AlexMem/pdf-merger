@@ -2,7 +2,9 @@ rootProject.name = 'pdf-merger'
 include 'core'
 include 'console-app'
 include 'desktop-app'
+include 'rest-app'
 
 project(':core').projectDir = "$rootDir/core" as File
 project(':console-app').projectDir = "$rootDir/console-app" as File
 project(':desktop-app').projectDir = "$rootDir/desktop-app" as File
+project(':rest-app').projectDir = "$rootDir/rest-app" as File

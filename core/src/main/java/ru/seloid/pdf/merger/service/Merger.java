@@ -4,7 +4,9 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.pdfbox.io.MemoryUsageSetting;
 import org.apache.pdfbox.multipdf.PDFMergerUtility;
 
+import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -38,6 +40,19 @@ public class Merger {
         Objects.requireNonNull(fileNames, "Empty file list");
         final Stream<Path> filePaths = fileNames.stream().map(Paths::get);
         return merge(filePaths, resultFilePath);
+    }
+
+    public static byte[] mergeStreams(final Collection<InputStream> inputStreams) throws Exception {
+        if (inputStreams == null || inputStreams.isEmpty()) {
+            throw new Exception("Files not given");
+        }
+
+        final PDFMergerUtility pdfMergerUtility = new PDFMergerUtility();
+        inputStreams.forEach(pdfMergerUtility::addSource);
+        final ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        pdfMergerUtility.setDestinationStream(baos);
+        pdfMergerUtility.mergeDocuments(MemoryUsageSetting.setupMainMemoryOnly());
+        return baos.toByteArray();
     }
 
     private static String merge(final Stream<Path> filePaths, final String resultFilePath) throws Exception {
